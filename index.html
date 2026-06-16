@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CyberAcademy | Kiberxavfsizlik Kursi</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+  <!-- Background layers -->
+  <canvas id="matrix"></canvas>
+  <div class="aurora"></div>
+  <div class="noise"></div>
+  <div class="particles" id="particles"></div>
+
+  <!-- ── NAVBAR ── -->
+  <header class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="#" class="logo">
+        <div class="logo-mark">
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+            <path d="M14 2L4 7v8c0 5.55 4.27 10.74 10 12 5.73-1.26 10-6.45 10-12V7L14 2z" fill="url(#lg1)" opacity="0.9"/>
+            <path d="M10 14l3 3 5-5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <defs>
+              <linearGradient id="lg1" x1="4" y1="2" x2="24" y2="26" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#00ff88"/>
+                <stop offset="1" stop-color="#00b4d8"/>
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+        <span>Cyber<b>Academy</b></span>
+      </a>
+      <nav class="nav-links">
+        <a href="#about">Kurs</a>
+        <a href="#curriculum">Dastur</a>
+        <a href="#register">Ariza</a>
+      </nav>
+      <a href="#register" class="nav-cta">Ro'yxatdan o'tish →</a>
+      <button class="burger" id="burger" aria-label="menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <!-- mobile drawer -->
+    <div class="drawer" id="drawer">
+      <a href="#about" class="drawer-link">Kurs haqida</a>
+      <a href="#curriculum" class="drawer-link">O'quv dasturi</a>
+      <a href="#register" class="drawer-link">Ro'yxatdan o'tish</a>
+    </div>
+  </header>
+
+
+  <!-- ── HERO ── -->
+  <section class="hero">
+    <div class="hero-left">
+      <div class="pill">
+        <span class="pill-dot"></span>
+        <span class="pill-text">Yangi guruh — 2024</span>
+      </div>
+
+      <h1 class="h1">
+        <span class="line-wrap"><span class="reveal-line">Kiberxavfsizlik</span></span>
+        <span class="line-wrap gradient-text"><span class="reveal-line">Professional</span></span>
+        <span class="line-wrap"><span class="reveal-line">Kursi</span></span>
+      </h1>
+
+      <p class="hero-sub">
+        Ethical hacking, penetration testing va network security — 
+        barchasini real muhitda, tajribali mentorlar bilan o'rganing.
+      </p>
+
+      <div class="hero-actions">
+        <a href="#register" class="btn-primary">
+          <span>Hoziroq ro'yxatdan o'tish</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="#curriculum" class="btn-ghost">O'quv dasturi →</a>
+      </div>
+
+      <div class="counters">
+        <div class="counter-item">
+          <span class="counter-val" data-target="500">0</span><span class="counter-suffix">+</span>
+          <span class="counter-label">Bitiruvchi</span>
+        </div>
+        <div class="counter-sep"></div>
+        <div class="counter-item">
+          <span class="counter-val" data-target="3">0</span><span class="counter-suffix"> oy</span>
+          <span class="counter-label">Davomiylik</span>
+        </div>
+        <div class="counter-sep"></div>
+        <div class="counter-item">
+          <span class="counter-val" data-target="100">0</span><span class="counter-suffix">%</span>
+          <span class="counter-label">Amaliyot</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-right">
+      <div class="orb-scene">
+        <div class="orb-glow"></div>
+        <div class="orb-ring r1"></div>
+        <div class="orb-ring r2"></div>
+        <div class="orb-ring r3"></div>
+        <div class="orb-core">
+          <svg width="90" height="90" viewBox="0 0 90 90" fill="none">
+            <circle cx="45" cy="45" r="42" stroke="rgba(0,255,136,0.15)" stroke-width="1.5"/>
+            <path d="M45 10L15 26v22c0 16.6 12.8 32.2 30 36 17.2-3.8 30-19.4 30-36V26L45 10z" fill="url(#shieldGrad)" opacity="0.95"/>
+            <path d="M33 45l9 9 15-15" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+            <defs>
+              <linearGradient id="shieldGrad" x1="15" y1="10" x2="75" y2="80" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#00ff88"/>
+                <stop offset="0.5" stop-color="#00b4d8"/>
+                <stop offset="1" stop-color="#7c3aed"/>
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+        <div class="orb-tag tag-1"><span>🔐 Encryption</span></div>
+        <div class="orb-tag tag-2"><span>🛡 Firewall</span></div>
+        <div class="orb-tag tag-3"><span>🔍 OSINT</span></div>
+        <div class="orb-tag tag-4"><span>⚡ Pentest</span></div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ── ABOUT (bento grid) ── -->
+  <section class="about" id="about">
+    <div class="section-label">// NIMA UCHUN BIZNI TANLASH</div>
+    <h2 class="section-title">CyberAcademy <span class="gradient-text">afzalliklari</span></h2>
+
+    <div class="bento">
+      <div class="bento-card b-wide glow-green">
+        <div class="bento-icon">⚡</div>
+        <h3>Intensiv o'qitish</h3>
+        <p>Har kuni amaliy mashqlar, real CTF musobaqalari va jonli lab muhiti</p>
+        <div class="bento-tag">Amaliyot 100%</div>
+      </div>
+      <div class="bento-card glow-blue">
+        <div class="bento-icon">🏆</div>
+        <h3>Sertifikat</h3>
+        <p>Xalqaro tan olingan sertifikat</p>
+      </div>
+      <div class="bento-card glow-purple">
+        <div class="bento-icon">🌐</div>
+        <h3>Online + Offline</h3>
+        <p>Istalgan joydan jonli darslar</p>
+      </div>
+      <div class="bento-card glow-blue">
+        <div class="bento-icon">💼</div>
+        <h3>Ish kafolati</h3>
+        <p>Kurs oxirida ish topishda to'liq ko'mak</p>
+      </div>
+      <div class="bento-card b-wide glow-purple">
+        <div class="bento-icon">👨‍💻</div>
+        <h3>Tajribali mentorlar</h3>
+        <p>Bug bounty hunter va penetration tester mentorlar bilan bevosita ishlaysiz</p>
+        <div class="mentor-avatars">
+          <div class="m-av">M</div>
+          <div class="m-av">A</div>
+          <div class="m-av">J</div>
+          <span>+5 mentor</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CURRICULUM ── -->
+  <section class="curriculum" id="curriculum">
+    <div class="section-label">// O'QUV DASTURI</div>
+    <h2 class="section-title">Nimalar <span class="gradient-text">o'rganasiz?</span></h2>
+
+    <div class="cur-grid">
+      <div class="cur-card" style="--i:0">
+        <div class="cur-num">01</div>
+        <div class="cur-body">
+          <h4>Network Security</h4>
+          <p>Tarmoq xavfsizligi asoslari, protokollar, firewall sozlash</p>
+          <div class="cur-bar"><div class="cur-fill" style="--w:90%"></div></div>
+        </div>
+      </div>
+      <div class="cur-card" style="--i:1">
+        <div class="cur-num">02</div>
+        <div class="cur-body">
+          <h4>Ethical Hacking</h4>
+          <p>Qonuniy tarzda zaifliklarni topish va hisobot yozish</p>
+          <div class="cur-bar"><div class="cur-fill" style="--w:85%"></div></div>
+        </div>
+      </div>
+      <div class="cur-card" style="--i:2">
+        <div class="cur-num">03</div>
+        <div class="cur-body">
+          <h4>Penetration Testing</h4>
+          <p>Tizimlarni sinash, Metasploit, Burp Suite</p>
+          <div class="cur-bar"><div class="cur-fill" style="--w:80%"></div></div>
+        </div>
+      </div>
+      <div class="cur-card" style="--i:3">
+        <div class="cur-num">04</div>
+        <div class="cur-body">
+          <h4>Web App Security</h4>
+          <p>OWASP Top 10, SQL injection, XSS, CSRF hujumlar</p>
+          <div class="cur-bar"><div class="cur-fill" style="--w:88%"></div></div>
+        </div>
+      </div>
+      <div class="cur-card" style="--i:4">
+        <div class="cur-num">05</div>
+        <div class="cur-body">
+          <h4>Malware Analysis</h4>
+          <p>Zararli dasturlarni tahlil qilish va oldini olish</p>
+          <div class="cur-bar"><div class="cur-fill" style="--w:75%"></div></div>
+        </div>
+      </div>
+      <div class="cur-card" style="--i:5">
+        <div class="cur-num">06</div>
+        <div class="cur-body">
+          <h4>OSINT &amp; Forensics</h4>
+          <p>Ochiq ma'lumotlar razvedkasi va raqamli kriminalistika</p>
+          <div class="cur-bar"><div class="cur-fill" style="--w:82%"></div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- tech tags scroll -->
+    <div class="tags-scroll-wrap">
+      <div class="tags-scroll">
+        <span>Kali Linux</span><span>Metasploit</span><span>Burp Suite</span>
+        <span>Wireshark</span><span>Nmap</span><span>OSINT</span>
+        <span>Python</span><span>CTF</span><span>Docker</span>
+        <span>Bash</span><span>SQLmap</span><span>Hydra</span>
+        <span>Kali Linux</span><span>Metasploit</span><span>Burp Suite</span>
+        <span>Wireshark</span><span>Nmap</span><span>OSINT</span>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ── REGISTER ── -->
+  <section class="register" id="register">
+    <div class="reg-wrapper">
+
+      <div class="reg-info">
+        <div class="section-label">// RO'YXATDAN O'TISH</div>
+        <h2 class="section-title">Kursga <span class="gradient-text">qo'shiling!</span></h2>
+        <p class="reg-desc">Ma'lumotlaringizni qoldiring — biz 24 soat ichida siz bilan bog'lanamiz. Joylar juda cheklangan!</p>
+
+        <div class="info-cards">
+          <div class="info-card">
+            <div class="ic-icon">📅</div>
+            <div>
+              <div class="ic-label">Boshlanishi</div>
+              <div class="ic-val">1-iyul, 2024</div>
+            </div>
+          </div>
+          <div class="info-card">
+            <div class="ic-icon">⏰</div>
+            <div>
+              <div class="ic-label">Dars vaqti</div>
+              <div class="ic-val">18:00 — 21:00</div>
+            </div>
+          </div>
+          <div class="info-card">
+            <div class="ic-icon">💰</div>
+            <div>
+              <div class="ic-label">Narx</div>
+              <div class="ic-val">499 000 so'm/oy</div>
+            </div>
+          </div>
+          <div class="info-card">
+            <div class="ic-icon">👥</div>
+            <div>
+              <div class="ic-label">Guruh</div>
+              <div class="ic-val">max 20 kishi</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="seats-bar-wrap">
+          <div class="seats-label">
+            <span>Band bo'lgan joylar</span>
+            <span class="seats-count">16 / 20</span>
+          </div>
+          <div class="seats-bar">
+            <div class="seats-fill"></div>
+          </div>
+          <p class="seats-warn">⚠ Atigi 4 ta joy qoldi!</p>
+        </div>
+      </div>
+
+      <!-- FORM -->
+      <div class="reg-form-wrap">
+        <div class="form-glass">
+          <div class="fg-shine"></div>
+
+          <div class="fg-head">
+            <div class="fg-icon-wrap">
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                <path d="M16 2L4 8v10c0 7.4 5.1 14.3 12 16 6.9-1.7 12-8.6 12-16V8L16 2z" fill="url(#lg2)"/>
+                <path d="M11 16l4 4 6-6" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <defs>
+                  <linearGradient id="lg2" x1="4" y1="2" x2="28" y2="30" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#00ff88"/><stop offset="1" stop-color="#00b4d8"/>
+                  </linearGradient>
+                </defs>
+              </svg>
+            </div>
+            <div>
+              <h3>Ariza qoldiring</h3>
+              <p>Bepul konsultatsiya uchun</p>
+            </div>
+          </div>
+
+          <form id="registerForm" autocomplete="off" novalidate>
+            <div class="fg-field" id="nameField">
+              <label for="name">To'liq ismingiz</label>
+              <div class="field-inner">
+                <svg class="fi-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="7" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+                <input type="text" id="name" placeholder="Abdulloh Karimov" required/>
+              </div>
+              <span class="field-err" id="nameErr"></span>
+            </div>
+
+            <div class="fg-field" id="phoneField">
+              <label for="phone">Telefon raqamingiz</label>
+              <div class="field-inner">
+                <span class="fi-prefix">+998</span>
+                <input type="tel" id="phone" placeholder="90 123 45 67" required maxlength="12"/>
+              </div>
+              <span class="field-err" id="phoneErr"></span>
+            </div>
+
+            <button type="submit" class="fg-submit" id="submitBtn">
+              <span class="btn-text">Ro'yxatdan o'tish</span>
+              <span class="btn-loader" style="display:none">
+                <span></span><span></span><span></span>
+              </span>
+              <svg class="btn-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </button>
+          </form>
+
+          <p class="fg-note">🔒 Ma'lumotlaringiz xavfsiz saqlanadi</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SUCCESS MODAL ── -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal-box">
+      <button class="modal-x" id="modalClose">✕</button>
+      <div class="modal-burst">
+        <div class="mb-ring r1"></div>
+        <div class="mb-ring r2"></div>
+        <svg width="64" height="64" viewBox="0 0 64 64" fill="none">
+          <circle cx="32" cy="32" r="30" fill="url(#mgl)"/>
+          <path d="M20 32l9 9 15-15" stroke="#fff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <defs>
+            <linearGradient id="mgl" x1="2" y1="2" x2="62" y2="62" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#00ff88"/><stop offset="1" stop-color="#00b4d8"/>
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+      <h3>Tabriklaymiz! 🎉</h3>
+      <p>Siz muvaffaqiyatli ro'yxatdan o'tdingiz. Tez orada siz bilan bog'lanamiz!</p>
+      <div class="modal-divider"></div>
+      <p class="modal-tg-txt">Yangiliklar uchun Telegram kanalimizga qo'shiling:</p>
+      <a href="https://t.me/cyberacademy_uz" target="_blank" class="modal-tg-btn">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.248-2.026 9.553c-.148.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12l-6.871 4.326-2.962-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.89.668z"/></svg>
+        Telegram kanalga o'tish
+      </a>
+      <button class="modal-dismiss" id="modalDismiss">Yopish</button>
+    </div>
+  </div>
+
+  <!-- ── FOOTER ── -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <a href="#" class="logo">
+        <div class="logo-mark">
+          <svg width="22" height="22" viewBox="0 0 28 28" fill="none">
+            <path d="M14 2L4 7v8c0 5.55 4.27 10.74 10 12 5.73-1.26 10-6.45 10-12V7L14 2z" fill="url(#flg)"/>
+            <path d="M10 14l3 3 5-5" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <defs><linearGradient id="flg" x1="4" y1="2" x2="24" y2="26" gradientUnits="userSpaceOnUse"><stop stop-color="#00ff88"/><stop offset="1" stop-color="#00b4d8"/></linearGradient></defs>
+          </svg>
+        </div>
+        <span>Cyber<b>Academy</b></span>
+      </a>
+      <p class="footer-copy">© 2024 CyberAcademy. Barcha huquqlar himoyalangan.</p>
+      <div class="footer-links">
+        <a href="https://t.me/cyberacademy_uz" target="_blank">Telegram</a>
+        <a href="#">Instagram</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
